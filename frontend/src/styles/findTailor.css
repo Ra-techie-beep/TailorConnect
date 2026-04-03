@@ -1,0 +1,612 @@
+/* FindTailor.css - Dark Luxury Theme */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+.find-tailor-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #F5F1E8 0%, #E8DCC8 100%);
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Outfit', sans-serif;
+    padding-bottom: 80px;
+}
+
+/* Background Pattern similar to Review Page */
+.find-tailor-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image:
+        repeating-linear-gradient(45deg, #8B6F47 0px, #8B6F47 2px, transparent 2px, transparent 20px),
+        repeating-linear-gradient(-45deg, #8B6F47 0px, #8B6F47 2px, transparent 2px, transparent 20px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Page Header */
+.find-tailor-header {
+    background: #1a1512;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(201, 166, 107, 0.2);
+}
+
+.find-tailor-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #C9A66B;
+    /* Gold */
+    margin: 0;
+    line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(201, 166, 107, 0.3));
+}
+
+.find-tailor-subtitle {
+    color: #8B6F47;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Layout Grid */
+.search-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 1024px) {
+    .search-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar Filters - Dark Card Style */
+.filters-sidebar {
+    background: #1a1512;
+    border-radius: 30px;
+    border: 1px solid rgba(201, 166, 107, 0.2);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 2rem;
+    color: #F5F1E8;
+}
+
+.filters-header {
+    background: rgba(201, 166, 107, 0.1);
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(201, 166, 107, 0.1);
+    text-align: center;
+}
+
+.filters-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: #C9A66B;
+    letter-spacing: 1px;
+}
+
+.filters-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.filter-group-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8B6F47;
+    margin-bottom: 1rem;
+}
+
+/* Category Selection */
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.category-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    user-select: none;
+    color: rgba(245, 241, 232, 0.7);
+}
+
+.category-option:hover {
+    background: rgba(201, 166, 107, 0.05);
+    border-color: rgba(201, 166, 107, 0.2);
+    color: #F5F1E8;
+}
+
+.category-option.selected {
+    border-color: #C9A66B;
+    background: rgba(201, 166, 107, 0.1);
+    color: #C9A66B;
+    font-weight: 600;
+}
+
+.category-option input {
+    accent-color: #C9A66B;
+}
+
+/* Form Controls */
+.filter-input,
+.filter-select {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #F5F1E8;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.filter-input::placeholder {
+    color: rgba(245, 241, 232, 0.3);
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    border-color: #C9A66B;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(201, 166, 107, 0.1);
+}
+
+.filter-select option {
+    background: #1a1512;
+    color: #F5F1E8;
+}
+
+/* Buttons */
+.search-btn {
+    width: 100%;
+    padding: 1.1rem;
+    border-radius: 50px;
+    background: #C9A66B;
+    color: #1a1512;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.search-btn:hover:not(:disabled) {
+    background: #F5F1E8;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(201, 166, 107, 0.2);
+}
+
+.search-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.clear-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 50px;
+    border: 1px solid rgba(201, 166, 107, 0.3);
+    background: transparent;
+    color: #C9A66B;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: rgba(201, 166, 107, 0.05);
+    border-color: #C9A66B;
+}
+
+/* Results Content */
+.results-area {
+    min-width: 0;
+}
+
+.results-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: rgba(26, 21, 18, 0.03);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(201, 166, 107, 0.1);
+}
+
+.results-count {
+    color: #4A3728;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.page-info {
+    color: #8B6F47;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tailor Grid */
+.tailor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 3rem;
+}
+
+/* ... existing code ... */
+
+.city-clear-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(201, 166, 107, 0.1);
+    border: 1px solid rgba(201, 166, 107, 0.3);
+    color: #C9A66B;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-clear-btn:hover {
+    background: #C9A66B;
+    color: #1a1512;
+}
+
+/* Tailor Card - Matching Review Card Logic */
+.tailor-card {
+    background: #1a1512;
+    border-radius: 30px;
+    border: 1px solid rgba(201, 166, 107, 0.2);
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    color: #F5F1E8;
+}
+
+.tailor-card:hover {
+    background: #F5F1E8;
+    color: #1a1512;
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(74, 55, 40, 0.2);
+    border-color: rgba(139, 111, 71, 0.3);
+}
+
+.tailor-photo-wrapper {
+    position: relative;
+    height: 220px;
+    background: #1a1512;
+    overflow: hidden;
+}
+
+.tailor-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    opacity: 0.9;
+}
+
+.tailor-card:hover .tailor-photo {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.tailor-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    padding: 0.4rem 1rem;
+    background: #C9A66B;
+    color: #1a1512;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tailor-exp-badge {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    padding: 0.4rem 1rem;
+    background: rgba(26, 21, 18, 0.8);
+    color: #C9A66B;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(201, 166, 107, 0.3);
+}
+
+.tailor-card:hover .tailor-exp-badge {
+    background: rgba(245, 241, 232, 0.9);
+    color: #8B6F47;
+}
+
+.tailor-info {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tailor-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    color: #C9A66B;
+    transition: color 0.4s ease;
+}
+
+.tailor-card:hover .tailor-name {
+    color: #4A3728;
+}
+
+.tailor-specialty {
+    color: #8B6F47;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.tailor-card:hover .tailor-specialty {
+    color: #8B6F47;
+}
+
+.tailor-location {
+    color: rgba(245, 241, 232, 0.5);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem 0;
+    transition: color 0.4s ease;
+}
+
+.tailor-card:hover .tailor-location {
+    color: rgba(74, 55, 40, 0.6);
+}
+
+.tailor-actions {
+    border-top: 1px solid rgba(201, 166, 107, 0.1);
+    padding-top: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.tailor-card:hover .tailor-actions {
+    border-color: rgba(139, 111, 71, 0.1);
+}
+
+.call-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 15px;
+    background: #C9A66B;
+    color: #1a1512;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.call-btn:hover {
+    background: #1a1512;
+    color: #C9A66B;
+}
+
+.tailor-card:hover .call-btn:hover {
+    background: #C9A66B;
+    color: #F5F1E8;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid rgba(201, 166, 107, 0.3);
+    color: #C9A66B;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: rgba(201, 166, 107, 0.1);
+    border-color: #C9A66B;
+}
+
+.tailor-card:hover .social-btn {
+    border-color: rgba(139, 111, 71, 0.3);
+    color: #8B6F47;
+}
+
+/* Empty States */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 4px 12px rgba(201, 166, 107, 0.2));
+}
+
+.empty-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #C9A66B;
+    margin: 0 0 1rem 0;
+}
+
+.empty-msg {
+    color: #8B6F47;
+    font-size: 1rem;
+    max-width: 380px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    min-width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(201, 166, 107, 0.2);
+    background: #1a1512;
+    color: #C9A66B;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-size: 0.9rem;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #C9A66B;
+    color: #1a1512;
+    border-color: #C9A66B;
+}
+
+.page-btn.active {
+    background: #C9A66B;
+    color: #1a1512;
+    border-color: #C9A66B;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+/* City Combo Dropdown - Dark Style */
+.city-dropdown {
+    position: absolute;
+    z-index: 100;
+    margin-top: 0.5rem;
+    width: 100%;
+    background: #1a1512;
+    border: 1px solid rgba(201, 166, 107, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    max-height: 250px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0.5rem;
+}
+
+.city-item {
+    padding: 0.85rem 1.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: rgba(245, 241, 232, 0.7);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.city-item:hover {
+    background: rgba(201, 166, 107, 0.1);
+    color: #C9A66B;
+}
+
+.city-item.active {
+    font-weight: 700;
+    color: #1a1512;
+    background: #C9A66B;
+}
+
+/* Scrollbar Styling for Dropdowns */
+.city-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.city-dropdown::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.city-dropdown::-webkit-scrollbar-thumb {
+    background: rgba(201, 166, 107, 0.2);
+    border-radius: 10px;
+}
+
+.city-dropdown::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 166, 107, 0.4);
+}
