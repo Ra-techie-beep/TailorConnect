@@ -30,3 +30,5 @@ app.use((req, res) => {
   console.log(req.method, req.url);
   res.status(404).send("Invalid URL");
 });
+
+module.exports = app;
